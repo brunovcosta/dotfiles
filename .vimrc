@@ -27,7 +27,7 @@ map <C-Up> <C-W>k
 map <C-Left> <C-W>h
 map <C-Right> <C-W>l
 map <BS> X
-au InsertLeave * call cursor([getpos('.')[1],getpos('.')[2]>1?getpos('.')[2]+1:1])
+inoremap <silent> <Esc> <Esc>`^
 "cruz de vizualização
 set timeout
 set timeoutlen=0
