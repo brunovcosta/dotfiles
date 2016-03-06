@@ -7,6 +7,7 @@ set nowrap
 set tabstop=4
 set ts=4
 set sw=4
+set autoindent
 set hlsearch
 set incsearch
 set ignorecase
@@ -27,7 +28,6 @@ map <C-Up> <C-W>k
 map <C-Left> <C-W>h
 map <C-Right> <C-W>l
 map <BS> X
-inoremap <silent> <Esc> <Esc>`^
 "cruz de vizualização
 set timeout
 set timeoutlen=0
