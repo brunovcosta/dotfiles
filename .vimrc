@@ -1,13 +1,31 @@
 call plug#begin('~/.vim/plugged')
 Plug 'brunovcosta/crossover'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'brunovcosta/vim-pug'
+Plug 'tpope/vim-rails'
+Plug 'leafgarland/typescript-vim'
+Plug 'nikvdp/ejs-syntax'
+Plug 'adimit/prolog.vim'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'kchmck/vim-coffee-script'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+call plug#end()
+
 let g:ycm_confirm_extra_conf    = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
 let g:ycm_extra_conf_vim_data   = ['&filetype']
 let g:ycm_seed_identifiers_with_syntax = 1
-call plug#end()
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
 "MODIFICAÇÕES PESSOAIS
 set t_Co=256
 colorscheme hybrid
@@ -23,7 +41,6 @@ set sw=4
 set autoindent
 set hlsearch
 set incsearch
-set ignorecase
 set nobackup
 set nowritebackup
 set noswapfile
