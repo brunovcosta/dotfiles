@@ -11,6 +11,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 let g:ycm_confirm_extra_conf    = 0
@@ -23,6 +24,8 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+map <f9> :NERDTreeToggle<CR>
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
