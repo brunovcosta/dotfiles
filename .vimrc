@@ -5,11 +5,13 @@ Plug 'brunovcosta/vim-pug'
 Plug 'tpope/vim-rails'
 Plug 'leafgarland/typescript-vim'
 Plug 'nikvdp/ejs-syntax'
+Plug 'FredKSchott/CoVim'
 Plug 'adimit/prolog.vim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'kchmck/vim-coffee-script'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'SirVer/ultisnips'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 call plug#end()
@@ -28,6 +30,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 map <f9> :NERDTreeToggle<CR>
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+au BufNewFile,BufRead *.html.ejs set filetype=html
 
 "MODIFICAÇÕES PESSOAIS
 set t_Co=256
