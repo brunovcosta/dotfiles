@@ -14,7 +14,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-surround'
 Plug 'exu/pgsql.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'shougo/neocomplete.vim'
+"Plug 'shougo/neocomplete.vim'
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
@@ -43,13 +43,13 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_java_checkers=['javac']
 let g:syntastic_java_javac_config_file_enabled = 1
 
-""YouCompleteMe
-"let g:ycm_confirm_extra_conf    = 0
-"let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
-"let g:ycm_extra_conf_vim_data   = ['&filetype']
-"let g:ycm_seed_identifiers_with_syntax = 1
-"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"YouCompleteMe
+let g:ycm_confirm_extra_conf    = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm.py'
+let g:ycm_extra_conf_vim_data   = ['&filetype']
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 "UtilSnips
 let g:UltiSnipsExpandTrigger = "<tab>"
@@ -64,7 +64,6 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 "MODIFICAÇÕES PESSOAIS
 "au BufNewFile,BufRead *.html.ejs set filetype=html
 set t_Co=256
-colorscheme hybrid
 syntax on
 set scrolloff=3
 set rnu
