@@ -9,7 +9,7 @@ Plug 'rhysd/nyaovim-popup-tooltip'
 Plug 'vim-syntastic/syntastic'
 Plug 'FredKSchott/CoVim'
 Plug 'adimit/prolog.vim'
-Plug 'artur-shaik/vim-javacomplete2'
+"Plug 'artur-shaik/vim-javacomplete2'
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-surround'
 Plug 'exu/pgsql.vim'
@@ -58,7 +58,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 map <f9> :NERDTreeToggle<CR>
 
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
+"autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 
 "MODIFICAÇÕES PESSOAIS
@@ -83,12 +83,14 @@ set list listchars=tab:\│\
 hi Normal ctermbg=233
 hi SpecialKey ctermfg=235
 set mouse=nv
+
 "if exists('+autochdir')
 "	set autochdir
 "else
 "	autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 "endif
-"navegação entre panels
+
+" Navegação entre panels
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -98,9 +100,11 @@ map <C-Up> <C-W>k
 map <C-Left> <C-W>h
 map <C-Right> <C-W>l
 map <BS> X
+
 set background=dark
 
-map ? :
-
-"Vim render error with tmux
+" Vim render error with tmux
 set tenc=utf8
+
+" Default register unnamedplus
+set clipboard=unnamedplus
