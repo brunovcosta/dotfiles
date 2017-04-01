@@ -108,3 +108,6 @@ set tenc=utf8
 
 " Default register unnamedplus
 set clipboard=unnamedplus
+
+" Statusline
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
