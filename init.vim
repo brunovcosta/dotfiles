@@ -6,20 +6,20 @@ Plug 'tpope/vim-rails'
 Plug 'leafgarland/typescript-vim'
 Plug 'briancollins/vim-jst'
 Plug 'rhysd/nyaovim-popup-tooltip'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'FredKSchott/CoVim'
 Plug 'adimit/prolog.vim'
-"Plug 'artur-shaik/vim-javacomplete2'
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-surround'
 Plug 'exu/pgsql.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-"Plug 'shougo/neocomplete.vim'
+Plug 'raimondi/delimitmate'
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
 call plug#end()
 
 "Ctrl+P
