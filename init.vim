@@ -58,13 +58,14 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 map <f9> :NERDTreeToggle<CR>
 
-"autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" Crossover
+let g:crossover_insert_color=253
+let g:crossover_normal_color=255
 
 
 "MODIFICAÇÕES PESSOAIS
 "au BufNewFile,BufRead *.html.ejs set filetype=html
 set t_Co=256
-syntax on
 set scrolloff=3
 set rnu
 set nu
@@ -80,8 +81,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 set list listchars=tab:\│\  
-hi Normal ctermbg=233
-hi SpecialKey ctermfg=235
 set mouse=nv
 
 "if exists('+autochdir')
@@ -101,7 +100,7 @@ map <C-Left> <C-W>h
 map <C-Right> <C-W>l
 map <BS> X
 
-set background=dark
+"set background=dark
 
 " Vim render error with tmux
 set tenc=utf8
@@ -111,3 +110,4 @@ set clipboard=unnamedplus
 
 " Statusline
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
+syntax on
