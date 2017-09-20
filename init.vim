@@ -18,6 +18,10 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 "Ctrl+P
@@ -60,6 +64,10 @@ map <f9> :NERDTreeToggle<CR>
 let g:crossover_insert_color=253
 let g:crossover_normal_color=255
 
+" Deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#clang#libclang_path='/usr/lib/llvm-3.8/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header='/usr/lib/clang'
 
 "MODIFICAÇÕES PESSOAIS
 "au BufNewFile,BufRead *.html.ejs set filetype=html
@@ -109,3 +117,4 @@ set clipboard=unnamedplus
 " Statusline
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
 syntax on
+
