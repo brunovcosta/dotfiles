@@ -22,6 +22,7 @@ Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 "Ctrl+P
