@@ -1,24 +1,31 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'brunovcosta/crossover'
+Plug 'wavded/vim-stylus'
+Plug 'othree/html5.vim'
 Plug 'google/vim-searchindex'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-rails'
+" Languages/File extensions
 Plug 'leafgarland/typescript-vim'
 Plug 'briancollins/vim-jst'
+Plug 'isRuslan/vim-es6'
 Plug 'rhysd/nyaovim-popup-tooltip'
 Plug 'FredKSchott/CoVim'
 Plug 'adimit/prolog.vim'
 Plug 'kchmck/vim-coffee-script'
+Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'exu/pgsql.vim'
 Plug 'raimondi/delimitmate'
 Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
+Plug 'dNitro/vim-pug-complete'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
-
+Plug 'digitaltoad/vim-pug'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
@@ -33,18 +40,6 @@ call plug#end()
 
 "FZF
 map <C-p> :FZF<Enter>
-
-"Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_java_checkers=['javac']
-let g:syntastic_java_javac_config_file_enabled = 1
 
 "YouCompleteMe
 let g:ycm_confirm_extra_conf    = 0
@@ -117,5 +112,6 @@ set clipboard=unnamedplus
 
 " Statusline
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
+set statusline+=%{fugitive#statusline()}
 syntax on
 
