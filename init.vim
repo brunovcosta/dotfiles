@@ -6,11 +6,8 @@ Plug 'google/vim-searchindex'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-rails'
 " Languages/File extensions
-Plug 'leafgarland/typescript-vim'
-Plug 'briancollins/vim-jst'
 Plug 'isRuslan/vim-es6'
 Plug 'rhysd/nyaovim-popup-tooltip'
-Plug 'FredKSchott/CoVim'
 Plug 'adimit/prolog.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'hashivim/vim-terraform'
@@ -26,17 +23,11 @@ Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'digitaltoad/vim-pug'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-jedi'
+Plug 'prettier/vim-prettier'
 call plug#end()
-
-"Ctrl+P
-"if exists("g:ctrl_user_command")
-"  unlet g:ctrlp_user_command
-"endif
-"set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 
 "FZF
 map <C-p> :FZF<Enter>
@@ -54,11 +45,12 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+"NERDTree
 map <f9> :NERDTreeToggle<CR>
 
 " Crossover
-let g:crossover_insert_color=253
-let g:crossover_normal_color=255
+let g:crossover_insert_color=53
+let g:crossover_normal_color=55
 
 " Deoplete.nvim
 let g:deoplete#enable_at_startup = 1
@@ -66,7 +58,6 @@ let g:deoplete#sources#clang#libclang_path='/usr/lib/llvm-3.8/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header='/usr/lib/clang'
 
 "MODIFICAÇÕES PESSOAIS
-"au BufNewFile,BufRead *.html.ejs set filetype=html
 set t_Co=256
 set scrolloff=3
 set rnu
@@ -84,12 +75,6 @@ set nowritebackup
 set noswapfile
 set list listchars=tab:\│\  
 set mouse=nv
-
-"if exists('+autochdir')
-"	set autochdir
-"else
-"	autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
-"endif
 
 " Navegação entre panels
 map <C-j> <C-W>j
@@ -114,4 +99,3 @@ set clipboard=unnamedplus
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
 set statusline+=%{fugitive#statusline()}
 syntax on
-
