@@ -1,50 +1,47 @@
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
+
+-- Plugins essenciais
 Plug('brunovcosta/crossover')
 Plug('neovim/nvim-lspconfig')
+Plug('github/copilot.vim')
 Plug('nvim-lua/plenary.nvim')
-Plug(
-  'mrcjkb/haskell-tools.nvim',{
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-  },
-  branch = '2.x.x', -- Recommended
-  ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
-})
--- Language Server
-Plug("junegunn/fzf", {run = ":call fzf#install()" })
+Plug('junegunn/fzf', {['do'] = vim.fn['fzf#install']})
+
+-- Plugins para desenvolvimento web
+Plug("pangloss/vim-javascript")
+Plug("leafgarland/typescript-vim")
+Plug("maxmellon/vim-jsx-pretty")
+Plug("jparise/vim-graphql")
+
 vim.call('plug#end')
 
 -- FZF
-vim.api.nvim_set_keymap('n', '<C-p>', ':FZF<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<C-p>', ':FZF<CR>', { noremap = true, silent = true })
 
--- Crossover
+-- Configurações do Crossover
 vim.g.crossover_insert_color = 53
 vim.g.crossover_normal_color = 55
 
--- Setup language servers.
+-- Configuração dos servidores de linguagem
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
 
-
--- Global mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
+-- Mapas globais para diagnósticos
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
+-- Autocomando para mapear teclas após a conexão do LSP
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
+    -- Habilitar a conclusão desencadeada por <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    -- Mapas locais do buffer
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
@@ -66,7 +63,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- Personal modifications
+-- Modificações pessoais
 vim.wo.scroll = 3
 vim.wo.relativenumber = true
 vim.wo.number = true
@@ -82,22 +79,22 @@ vim.o.list = true
 vim.o.listchars = 'tab:| '
 vim.o.mouse = 'nv'
 
--- Navigation between panels
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-W>j', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-W>k', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-W>h', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-W>l', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-Down>', '<C-W>j', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-Up>', '<C-W>k', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-Left>', '<C-W>h', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-Right>', '<C-W>l', {noremap = true})
-vim.api.nvim_set_keymap('n', '<BS>', 'X', {noremap = true})
+-- Navegação entre painéis
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-W>j', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-W>k', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-W>h', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-W>l', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-Down>', '<C-W>j', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-Up>', '<C-W>k', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-Left>', '<C-W>h', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-Right>', '<C-W>l', { noremap = true })
+vim.api.nvim_set_keymap('n', '<BS>', 'X', { noremap = true })
 
--- Vim render error with tmux
+-- Configuração de renderização para tmux
 vim.o.enc = 'utf-8'
 
--- Default register unnamedplus
+-- Registro padrão unnamedplus
 vim.o.clipboard = 'unnamedplus'
 
+-- Ativar a sintaxe
 vim.cmd("syntax on")
-
